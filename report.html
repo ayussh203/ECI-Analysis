@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Lok Sabha Elections 2024 </title>
+</head>
+<body>
+    <div class="major">
+        <h1 class="Report-Title">Data Insights Report on Lok Sabha Elections 2024</h1>
+        <h2 class="Report-Subtitle">Created by - Ayush Srivastava<br>
+            Data Gathered from ECI Govt. Of India Website</h2>
+
+            <div class="Abstract">
+                <h2 class="Abstract-Title">Abstract</h2>
+                <p class="Abstract-Content">Thank you for taking the time to read this report. </p>
+                <p class="Abstract-Content"> Lok Sabha Elections
+                    are a great ordeal in India. The elections of 2024 was held in 7 phases, starting from April 19,
+                    with results released on June 4. Polling is done through EVM machines in India, and all citizens above 
+                    the age of 18 are requested to participate.</p>
+                </p>
+                <p class="Abstract-Content">
+                    The task at hand was to scrape data from the official ECI website and draw certain insights from the data gathered. I used Python Libraries like BeautifulSoup for scraping, 
+                    and Selenium for automation of user behavior for different navigation, loops, and effective scraping. I also used other 
+                    libraries to manipulate data, stored in the form of CSV files, and to visualize them. I used Tableau, primarily to 
+                    create interactive visualizations to demonstrate the insights and trends I was able to derive.
+                </p>
+                <p class="Abstract-Content">Thus, this report contains the methodology used to gather the data, preprocessing steps, and finally the visualizations
+                    and insights derived from the said data. The primary reason for making this web-based report was to utilize 
+                    Tableau's embed feature to make use of its interactive visualization designs. </p>
+                <p class="Abstract-Content">Thank you for reading!</p>
+            </div><!--Abstract closing div-->
+            <div class="Contents">
+                <h2 class="Contents-Title">Contents</h2>
+                <ul class="Contents-Content">
+                    <li><a href="#Problem_Statement" class="cont">Problem Statement</a></li>
+                    <li><a href="#Objectives" class="cont">Objectives</a></li>
+                    <li><a href="#Flowchart" class="cont">FlowChart</a></li>
+                    <li><a href="#Methodology" class="cont">Methodology</a></li>
+                    <li><a href="#Insights" class="cont">Insights Derived</a></li>
+                    <li><a href="#Bonus" class="cont">Bonus Visualization</a></li>
+                    <li><a href="#Conclusion" class="cont">Conclusion</a></li>
+                </ul>
+            </div><!--Contents closing div-->
+            <div class="Problem_Statement" id="Problem_Statement">
+                <h2 class="Problem_Statement-Title">Problem Statement</h2>
+                <p class="Problem_Statement-Content">In recent years, the complexity and volume of electoral data have significantly
+                    increased. This influx makes it imperative to develop robust methodologies for data collection, processing, and 
+                    visualization. The goal of visualization - is obviously to derive information and insights, not usually identifiable 
+                    by directly looking at the data.
+                </p>
+                <p class="Problem_Statement-Content">
+                    The goal of this project is to gather, process, and analyze electoral data from various states in India to 
+                    derive meaningful insights that can aid political analysts, researchers, and the general public in understanding 
+                    voting patterns, party dominance, and electoral dynamics across the country.
+                </p>
+                <p class="Problem_Statement-Content">
+                    A combination of Web-Scraping using Selenium and BeautifulSoup; preprocessing methods using different python libraries;
+                    visualizations using Tableau, and representation of the report using Front-End Web Development; was utilized in successfully 
+                    completing this project.
+                </p>
+            </div><!--Problem_Statement closing div-->
+            <div class="Objectives" id="Objectives">
+                <h2 class="Objectives-Title">Objectives</h1>
+                <ul class="Objectives-Content">
+                    <li><b style="text-decoration: underline dotted black;">Data Collection</b> : Scraping of Data from ECI Website. 
+                        Scraped National Seat Distribution, State-wise Seat Distribution, and Constituency winners along with No. of votes and majority votes.</li>
+                    <li><b style="text-decoration: underline dotted black;">Data Preprocessing</b> : Preprocess data to produce different
+                    Structures. For eg- Combined constituency lists of all states to display stats about all 543 constituencies.</li>
+                    <li><b style="text-decoration: underline dotted black;">Data visualization</b> : Visualization of processed data using 
+                    Tableau :- Created Interactive Map Visualizations and other simple graphs.</li>
+                    <li><b style="text-decoration: underline dotted black;">Insights Derivation</b> : Draw Insightful Information and 
+                    conclusions using processed data and visualizations</li>
+                    <li><b style="text-decoration: underline dotted black;">Report</b> : Compile entire workflow, methodologies and insights 
+                    into a comprehensive and meaningful report with visual aids.</li>
+                </ul>
+            </div><!-- Objectives closing div-->
+            <div class="Flowchart" id="Flowchart">
+                <h2 class="Flowchart-Title">FlowChart</h2>
+            <iframe width="100%" height="600px" scrolling="yes" frameborder="no" src="https://www.taskade.com/embed/aH5vU1q8HREuEcRb?as=orgchart&share=view&view=LEwfkhd6tPVEi8YT&theme=dark&coverImageType=background">
+            </iframe>  
+            <p class="Flowchart-Content" style="text-align: end;">Interactive FlowChart to display methodology overview.</p>          
+            </div><!--Flowchart div end-->
+            <div class="Methodology" id="Methodology">
+                <h2 class="Methodology-Title">Methodology Details</h2>
+                <h2>Step 1: Web-Scraping Using Selenium & BeautifulSoup :-</h2>
+                <p class="Methodology-Content">A) For the National Seat Distribution of the parties, the table was hosted on this 
+                    <a href="https://results.eci.gov.in/PcResultGenJune2024/index.htm">url.</a> Scraping this 
+                    table was relatively easy, using BeautifulSoup.</p>
+                    <p class="Methodology-Content">The specific script can be found in the file "Initial.py"</p>
+                    <p class="Methodology-Content">=> Here is a screenshot of the code: 
+                        <img src="pictures_HTML/pic1.png"></p>
+                <p class="Methodology-Content">B) For seat distribution of every state, I had to automate the 
+                    WebScraping behaviour. Using Selenium to mimic user interaction with the website, I had 
+                    to select the states from the dropdown and scrape the table on the new website which is 
+                    generated, and then return to the previous page again to select the next option and repeat 
+                    the scraping process.
+                </p>
+                <p class="Methodology-Content">This Specific script can be found in "drop_down.py"
+                </p>
+                <p class="Methodology-Content">=> Here is a screenshot of the code:
+                    <img src="pictures_HTML/pic2.png">
+                </p>
+                <p class="Methodology-Content">C) For every party in every state, I also scraped the details 
+                    about which constituency the party has managed to secure a seat in, the candidate's name, 
+                    the total votes he/she has received, and the margin of their votes. This was by far the 
+                    toughest script I have written, due to loops, multiple go-back statements, and refetching
+                    due to StaleElement errors. It obviously required a lot of space and time.
+                    The script generates a directory of each state, along with individual csv files for each party.
+                </p>
+                <p class="Methodology-Content">The specific script can be found in the file "Next_scene.py"</p>
+                <p class="Methodology-Content">=> Here is a screenshot of the code:
+                    <img src="pictures_HTML/pic3.png" style="width: 75%;">
+                </p>
+<br>
+<br>
+                <h2>Step 2: Data Processing & Mining :-</h2>
+                <p class="Methodology-Content">
+                    A) Merging state-wise constituency winnings to create a consolidated list of all 543 constituencies,
+                    along with the following details :- 
+                    <ul>
+                        <li><b>State</b> in which the constituency is situated.</li>
+                        <li><b>Candidate</b> who has won.</li>
+                        <li><b>Party</b> which the candidate belongs to.</li>
+                        <li><b>Total Votes</b> received by the candidate.</li>
+                        <li><b>Majority voted</b> by which he/she has won</li>
+                    </ul>
+                </p>
+                <p class="Methodology-Content">
+                    The specific script can be found in the file "merge.py"
+                    <br><br>
+                    => Here is a screenshot of the code: 
+                    <img src="pictures_HTML/pic4.png">
+                </p>
+                <p class="Methodology-Content">
+                    B) I also created a list containing parties who have gathered the most seats in every state.
+                    This was imperative to visualize the majority in each state, and its effect on the 
+                    National Seat distribution.
+                    <br><br>
+                    The specific script can be found in the file "leading.py"
+                    <br><br>
+                    => Here is a screenshot of the code:
+                    <img src="pictures_HTML/pic5.png">
+                </p>
+                <p class="Methodology-Content">
+                    C) Finally, to see the Top performers in every state I made a script. Additionally, if there 
+                    are ties in the number of seats, then all parties with the same number of seats are included in the
+                    file. 
+                    <br><br>
+                    The specific script can be found in the file "State_competition.py"
+                    <br><br>
+                    => Here is a screenshot of the code:
+                    <img src="pictures_HTML/pic6.png">
+                </p>
+                <h2>Step 3: Data Visualization :-</h2>
+                <p class="Methodology-Content">
+                    The scraped and processed data was used to visualize data using different charts.
+                    Tableau was a really helpful tool in making interactive dashboards, and it made 
+                    uncovering insights very easy. 
+                    <br><br>
+                    The visualizations are depicted in the Insights section of this report.
+                </p>
+            </div><!--Methodology closing div-->
+            <div class="Insights" id="Insights">
+                <h1 class="Insights-Title">Insights Derived</h1>
+                
+                <h3>Below is the Tableau Dashboard, which becomes our Primary Reference 
+                    for all inferences we draw in this report. 
+                </h3>
+                <h5>Please refer to the paragraph below the visualization to know about the features in the 
+                    dashboard.
+                </h5>
+                <!--Tableau Div starting here-->
+                <div class='tableauPlaceholder' id='viz1719755939816' style='position: relative; width: 80%; margin: auto;'>
+                    <noscript>
+                        <a href='#'>
+                            <img alt=' ' src='https://public.tableau.com/static/images/Lo/LokSabhastats/PartyStats-NationalState/1_rss.png' style='border: none' />
+                        </a>
+                    </noscript>
+                    <object class='tableauViz' style='display:none; width: 100%;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='LokSabhastats&#47;PartyStats-NationalState' />
+                        <param name='tabs' value='yes' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Lo&#47;LokSabhastats&#47;PartyStats-NationalState&#47;1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='en-GB' />
+                    </object>
+                </div><!--Tableau div ends here-->   
+             <div class="Tableau-Description">  <h3>The dashboard above has the following features:- 
+                    <ol>
+                        <li>
+                            <b>Party Stats- National/State :-</b>
+                            <ul>
+                                <li>Colour coded states corresponding to majority party.</li>
+                                <li>Hovering over each state highlights the name and seats won by the majority 
+                                    Party in that state.</li>
+                                    <li class="star-bullet">Selecting a state in the map, leads to display of state stats in the heat
+                                        map below. <br>For Eg-: Try Clicking on any one state, and see the difference in the heat map below.
+                                    </li>
+                                    <li>Selecting a party on the legends provided also highlights the state in which the 
+                                        respective party has a majority in.
+                                    </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <b>Top/Lowest National Winners :-</b>
+                            <ul>
+                                <li>Displays Top 7 parties with highest Seat winnings.</li>
+                                <li>Also displays parties which have gathered 1 seat in total.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </h3>
+                </div> <!--Tableau Description div closing-->
+                <h2>Insight 1 :-</h2>
+                <p class="Insights-Content">
+                    BJP has clear majority in 15 states/Union Territories.
+                    BJP has thus managed to retain 44.2% seats in the Lok Sabha Elections 2024.
+                    <br><br>
+                    <img src="pictures_HTML/i1.png">
+
+                </p> 
+                <h2>Insight 2 :-</h2>
+                <p class="Insights-Content">
+                    Similarly, INC has majority in 8 states. Thus, INC has managed to procure 18.2% of the total 
+                    seats in this election.
+                    <br><br>
+                    <img src="pictures_HTML/i2.png">
+                </p>
+                <p class="Insights-Content">
+                    INC Has Total Majority in the following stats :-
+                    <ol style="font-weight: bold">
+                        <li>Nagaland</li>
+                        <li>Manipur</li>
+                    </ol>
+                </p>
+
+
+
+                <h2>Insight 3 :-</h2>
+                <p class="Insights-Content">
+                    INC has majority in 5 states, along with a tie in Haryana, Telangana and Goa with BJP.
+                    <br><br>
+                    <img src="BJP_INC_TIE.png">
+                </p>       
+                <h2>Insight 4 :-</h2>
+                <p class="Insights-Content">
+                    The Top 7 Parties {Seat-Wise},  make for about 455 out of the total 543 seats in the Lok Sabha.
+                    <br><br>
+                    <img src="pictures_HTML/i3.png">
+                </p> 
+                <h2>Insight 5 :-</h2>
+                <p class="Insights-Content">
+                    17 parties have managed to secure only 1 seat.
+                    <img src="pictures_HTML/i4.png"> 
+                </p>  
+                <h2>Insight 6 :-</h2>
+                <p class="Insights-Content">
+                    The candidate <b style="font-family:cursive">Shankar Lalwani</b> from 
+                    <b style="font-family:cursive">BJP</b> 
+                    in the constituency <b style="font-family:cursive">Indore(26)</b>, 
+                    state <b style="font-family:cursive">Madhya Pradesh</b> won with the 
+                    highest vote margin of <b style="font-family:cursive">1175092 votes</b> in the whole country.
+                </p>     
+                <p class="Insights-Content">
+                    The candidate <b style="font-family:cursive">Ravindra Dattaram Waikar</b> from 
+                    <b style="font-family:cursive">Shiv Sena - SHS</b> in the constituency 
+                    <b style="font-family:cursive">Mumbai North West (27)</b>, state 
+                    <b style="font-family:cursive">Maharashtra</b> won with the lowest vote margin of 
+                    <b style="font-family:cursive">48 votes</b> in the whole country.
+                </p>
+                <br>
+                <img src="pictures_HTML/i5.png" >
+
+                <h2>Insight 7 :-</h2>
+                <p class="Insights-Content">
+                        BJP has Total Majority in the following states/UTs :- 
+                        <ol style="font-weight: bold;">
+                            <li>Madhya Pradesh</li>
+                            <li>Uttarakhand</li>
+                            <li>Himachal Pradesh</li>
+                            <li>Andaman & Nicobar Islands</li>
+                            <li>Delhi-NCT</li>
+                            <li>Arunachal Pradesh</li>
+                            <li>Tripura</li>
+                        </ol>
+                </p>
+                <h2>Insight 8 :-</h2>
+                <p class="Insights-Content">
+                    BJP has a huge majority in Gujarat, Odisha and Chattisgarh as well. But INC has managed to 
+                    secure 1 seat in these states as well. 
+                </p>
+                <h2>Insight 9 :-</h2>
+                <p class="Insights-Content">
+                    With INC being the 2nd party with the most seats, it is followed by Samajwadi Party at 
+                    37 seats. This is approximately 62% lower than that of INC.
+                    <br><br>
+                    <img src="pictures_HTML/i9.png">
+                </p>
+                <h2>Insight 10 :-</h2>
+                <h3>Consider the Visualization below: </h3>
+                <h4>You can hover/select the states on the Map to get more information </h4>
+
+                <div class='tableauPlaceholder' id='viz1719770344366' style='position: relative'>
+                    <noscript>
+                        <a href='#'><img alt='Analysis of INC as the Second Leading Party ' src='https://public.tableau.com/static/images/An/AnalysisofINCinElections24/INC/1_rss.png' style='border: none' /></a>
+                    </noscript>
+                    <object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='AnalysisofINCinElections24&#47;INC' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https://public.tableau.com/static/images/An/AnalysisofINCinElections24/INC/1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='en-US' />
+                        <param name='filter' value='publish=yes' />
+                    </object>
+                </div> <!--Tableau Div closing here-->
+                <br>
+                <p class="Insights-Content">
+                    Using the above Visualization, we can successfully derive two interesting points.
+                </p>
+                <p class="Insights-Content">
+                    I] There are 6 states where BJP is leading, INC is second; with respect to the total seats 
+                    won in each state. Along with this, there are 3 states where BJP and INC are tied with equal
+                    number of seats.
+                    <br>
+                    II] There are 5 states where INC has a majority.
+                    <br>
+                </p>
+                    <p style="font-family:Arial, Helvetica, sans-serif; font-weight:900">=> Therefore, We can conclude that the Indian National Congress (INC) is not a secondary 
+                    option to the Bharatiya Janata Party (BJP), as some might interpret. Instead, the INC is 
+                    a significant contender in its own, gaining second position overall by winning in various
+                    constituencies.</p>
+<br><br>
+
+            </div><!--Insight closing div-->
+            <div class="Bonus" id="Bonus">
+                <h2 class="Bonus-Title">Bonus Visualization</h2>
+                <p class="Bonus-Content">
+                    To visualize the Growth or Decline of a few National Parties, I made another visualization
+                    by comparing the Total Seats won in the Lok Sabha Elections of 2019 vs 2024. 
+                    Some interesting trends were noticed, with some parties declining, and some parties growing
+                    from 0 seats in 2019 to 4 seats in 2024.
+                </p>
+                <p class="Bonus-Content">
+                    The following Visualization was made on Tableau as well. 
+                </p>
+
+                <div class='tableauPlaceholder' id='viz1719771709300' style='position: relative'>
+                    <noscript>
+                      <a href='#'>
+                        <img alt='Seat Ratio of Lok Sabha Elections 2019 Vs 2024' src='https://public.tableau.com/static/images/Se/SeatRatioElections19vs24/Sheet2/1_rss.png' style='border: none' />
+                      </a>
+                    </noscript>
+                    <object class='tableauViz' style='display:none;'>
+                      <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                      <param name='embed_code_version' value='3' />
+                      <param name='site_root' value='' />
+                      <param name='name' value='SeatRatioElections19vs24/Sheet2' />
+                      <param name='tabs' value='no' />
+                      <param name='toolbar' value='yes' />
+                      <param name='static_image' value='https://public.tableau.com/static/images/Se/SeatRatioElections19vs24/Sheet2/1.png' />
+                      <param name='animate_transition' value='yes' />
+                      <param name='display_static_image' value='yes' />
+                      <param name='display_spinner' value='yes' />
+                      <param name='display_overlay' value='yes' />
+                      <param name='display_count' value='yes' />
+                      <param name='language' value='en-US' />
+                      <param name='filter' value='publish=yes' />
+                    </object>
+                  </div> <!--Tableau div closing here-->
+<br><br>
+
+            </div><!--Bonus closing div-->
+            <div class="Conclusion" id="Conclusion">
+                <h2 class="Conclusion-Title">Conclusion</h2>
+                <p class="Conclusion-Content">
+                    Thus, we see the trends in the Lok Sabha Elections in the year 2024, and derive certain 
+                    insights, with the help of interactive visualizations. The visualizations build in tableau
+                    are embedded to give users the ability to interact with the dashboard and understand the 
+                    distribution of seats and votes in state, leading up to the national seat statistics.
+                </p>
+                <p class="Conclusion-Content">
+                    This task thus, required the use of various tools, a comprehensive study of election results,
+                    and the structure of the ECI Website. 
+                </p>
+                <p class="Conclusion-Content">
+                    By leveraging advanced data processing and visualization techniques, this project aims to 
+                    provide a clear and insightful view of the electoral landscape, contributing valuable knowledge
+                    to the field of political analysis and public awareness.
+                    <br><br>
+                    I am open to feedback and further discussions on how to 
+                    make my analysis better!
+                </p>
+            </div><!--Conclusion closing div-->
+
+            <div class="navbar">
+                <h2>To go back to the Github Repository, <a href="https://github.com/ayussh203/ECI-Analysis">Click Here!</a></h2>
+            </div>
+        
+
+    </div> <!--Body Div ends here-->
+    <script type='text/javascript'>
+        var divElement = document.getElementById('viz1719755939816');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        vizElement.style.width = '100%';
+        if (divElement.offsetWidth > 800) { 
+            vizElement.style.minWidth = '1000px';
+            vizElement.style.maxWidth = '100%';
+            vizElement.style.minHeight = '1100px';
+            vizElement.style.maxHeight = (divElement.offsetWidth * 0.75) + 'px';
+        } else if (divElement.offsetWidth > 500) { 
+            vizElement.style.minWidth = '1000px';
+            vizElement.style.maxWidth = '100%';
+            vizElement.style.minHeight = '1100px';
+            vizElement.style.maxHeight = (divElement.offsetWidth * 0.75) + 'px';
+        } else { 
+            vizElement.style.width = '100%';
+            vizElement.style.minHeight = '800px';
+            vizElement.style.maxHeight = (divElement.offsetWidth * 1.77) + 'px';
+        } 
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    </script> 
+    <script type='text/javascript'>
+        var divElement = document.getElementById('viz1719770344366');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        vizElement.style.width = '100%';
+        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    </script>
+    <script type='text/javascript'>
+        var divElement = document.getElementById('viz1719771709300');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        vizElement.style.width='100%';
+        vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+      </script>
+</body>
+</html>

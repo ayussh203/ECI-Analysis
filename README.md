@@ -15,3 +15,6 @@ Put the following command in your terminal/cmd after traversing to the designate
 ```bash
 git clone https://github.com/ayussh203/ECI-Analysis.git
 pip install -r requirements.txt
+**To see the report kindly visit here
+https://ayussh203.github.io/ECI-Analysis/
+**

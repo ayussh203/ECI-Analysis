@@ -3,8 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Lok Sabha Elections 2024 </title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #4DB6AC; /* Teal background */
+            color: black;
+            margin: 0;
+            padding: 0;
+        }
+        .major {
+            background-color: #F3E5AB; /* Light yellow background for the content */
+            margin: 2% 10%;
+            padding: 20px;
+            border: 5px solid black;
+        }
+        h1.Report-Title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-decoration: underline;
+        }
+        h2.Report-Subtitle {
+            text-align: right;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .Abstract, .Contents, .Problem_Statement, .Objectives, .Flowchart, .Methodology, .Insights, .Bonus, .Conclusion {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 2px solid black;
+        }
+        .Abstract-Title, .Contents-Title, .Problem_Statement-Title, .Objectives-Title, .Flowchart-Title, .Methodology-Title, .Insights-Title, .Bonus-Title, .Conclusion-Title {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            text-align: center;
+            text-decoration: underline;
+        }
+        .Abstract-Content, .Problem_Statement-Content, .Objectives-Content, .Flowchart-Content, .Methodology-Content, .Insights-Content, .Bonus-Content, .Conclusion-Content {
+            font-size: 1.2em;
+            text-align: justify;
+            line-height: 1.6;
+        }
+        .Contents-Title {
+            font-size: 1.8em;
+            text-decoration: underline;
+            text-align: center;
+        }
+        .Contents-Content {
+            list-style-type: none;
+            padding-left: 0;
+            font-size: 1.2em;
+            text-align: left;
+        }
+        .Contents-Content li {
+            margin-bottom: 10px;
+        }
+        .Contents-Content a {
+            color: black;
+            text-decoration: none;
+        }
+        .Contents-Content a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <title>Lok Sabha Elections 2024</title>
 </head>
 <body>
     <div class="major">
@@ -14,23 +76,15 @@
 
             <div class="Abstract">
                 <h2 class="Abstract-Title">Abstract</h2>
-                <p class="Abstract-Content">Thank you for taking the time to read this report. </p>
-                <p class="Abstract-Content"> Lok Sabha Elections
-                    are a great ordeal in India. The elections of 2024 was held in 7 phases, starting from April 19,
-                    with results released on June 4. Polling is done through EVM machines in India, and all citizens above 
-                    the age of 18 are requested to participate.</p>
-                </p>
+                <p class="Abstract-Content">Thank you for taking the time to read this report.</p>
+                <p class="Abstract-Content"> Lok Sabha Elections are a great ordeal in India. The elections of 2024 were held in 7 phases, starting from April 19, with results released on June 4. Polling is done through EVM machines in India, and all citizens above the age of 18 are requested to participate.</p>
                 <p class="Abstract-Content">
-                    The task at hand was to scrape data from the official ECI website and draw certain insights from the data gathered. I used Python Libraries like BeautifulSoup for scraping, 
-                    and Selenium for automation of user behavior for different navigation, loops, and effective scraping. I also used other 
-                    libraries to manipulate data, stored in the form of CSV files, and to visualize them. I used Tableau, primarily to 
-                    create interactive visualizations to demonstrate the insights and trends I was able to derive.
+                    The task at hand was to scrape data from the official ECI website and draw certain insights from the data gathered. I used Python Libraries like BeautifulSoup for scraping, and Selenium for automation of user behavior for different navigation, loops, and effective scraping. I also used other libraries to manipulate data, stored in the form of CSV files, and to visualize them. I used Tableau, primarily to create interactive visualizations to demonstrate the insights and trends I was able to derive.
                 </p>
-                <p class="Abstract-Content">Thus, this report contains the methodology used to gather the data, preprocessing steps, and finally the visualizations
-                    and insights derived from the said data. The primary reason for making this web-based report was to utilize 
-                    Tableau's embed feature to make use of its interactive visualization designs. </p>
+                <p class="Abstract-Content">Thus, this report contains the methodology used to gather the data, preprocessing steps, and finally the visualizations and insights derived from the said data. The primary reason for making this web-based report was to utilize Tableau's embed feature to make use of its interactive visualization designs.</p>
                 <p class="Abstract-Content">Thank you for reading!</p>
             </div><!--Abstract closing div-->
+
             <div class="Contents">
                 <h2 class="Contents-Title">Contents</h2>
                 <ul class="Contents-Content">
@@ -43,34 +97,29 @@
                     <li><a href="#Conclusion" class="cont">Conclusion</a></li>
                 </ul>
             </div><!--Contents closing div-->
+
             <div class="Problem_Statement" id="Problem_Statement">
                 <h2 class="Problem_Statement-Title">Problem Statement</h2>
-                <p class="Problem_Statement-Content">In recent years, the complexity and volume of electoral data have significantly
-                    increased. This influx makes it imperative to develop robust methodologies for data collection, processing, and 
-                    visualization. The goal of visualization - is obviously to derive information and insights, not usually identifiable 
-                    by directly looking at the data.
+                <p class="Problem_Statement-Content">In recent years, the complexity and volume of electoral data have significantly increased. This influx makes it imperative to develop robust methodologies for data collection, processing, and visualization. The goal of visualization is obviously to derive information and insights, not usually identifiable by directly looking at the data.
                 </p>
                 <p class="Problem_Statement-Content">
-                    The goal of this project is to gather, process, and analyze electoral data from various states in India to 
-                    derive meaningful insights that can aid political analysts, researchers, and the general public in understanding 
-                    voting patterns, party dominance, and electoral dynamics across the country.
+                    The goal of this project is to gather, process, and analyze electoral data from various states in India to derive meaningful insights that can aid political analysts, researchers, and the general public in understanding voting patterns, party dominance, and electoral dynamics across the country.
                 </p>
                 <p class="Problem_Statement-Content">
-                    A combination of Web-Scraping using Selenium and BeautifulSoup; preprocessing methods using different python libraries;
-                    visualizations using Tableau, and representation of the report using Front-End Web Development; was utilized in successfully 
-                    completing this project.
+                    A combination of Web-Scraping using Selenium and BeautifulSoup; preprocessing methods using different python libraries; visualizations using Tableau, and representation of the report using Front-End Web Development were utilized in successfully completing this project.
                 </p>
             </div><!--Problem_Statement closing div-->
+
             <div class="Objectives" id="Objectives">
                 <h2 class="Objectives-Title">Objectives</h1>
                 <ul class="Objectives-Content">
                     <li><b style="text-decoration: underline dotted black;">Data Collection</b> : Scraping of Data from ECI Website. 
-                        Scraped National Seat Distribution, State-wise Seat Distribution, and Constituency winners along with No. of votes and majority votes.</li>
+                        Scraped National Seat Distribution, State-wise Seat Distribution, and Contituency winners along with No. of votes and majority votes.</li>
                     <li><b style="text-decoration: underline dotted black;">Data Preprocessing</b> : Preprocess data to produce different
-                    Structures. For eg- Combined constituency lists of all states to display stats about all 543 constituencies.</li>
+                    Structures. For eg- Combined constituency lists of all states to display stats about alll 543 constituencies.</li>
                     <li><b style="text-decoration: underline dotted black;">Data visualization</b> : Visualization of processed data using 
                     Tableau :- Created Interactive Map Visualizations and other simple graphs.</li>
-                    <li><b style="text-decoration: underline dotted black;">Insights Derivation</b> : Draw Insightful Information and 
+                    <li><b style="text-decoration: underline dotted black;">Insights Derivation</b> : Draw Insightful Informations and 
                     conclusions using processed data and visualizations</li>
                     <li><b style="text-decoration: underline dotted black;">Report</b> : Compile entire workflow, methodologies and insights 
                     into a comprehensive and meaningful report with visual aids.</li>
@@ -104,7 +153,7 @@
                 </p>
                 <p class="Methodology-Content">C) For every party in every state, I also scraped the details 
                     about which constituency the party has managed to secure a seat in, the candidate's name, 
-                    the total votes he/she has received, and the margin of their votes. This was by far the 
+                    the total votes he/she has recieved, and the margin of their votes. This was by far the 
                     toughest script I have written, due to loops, multiple go-back statements, and refetching
                     due to StaleElement errors. It obviously required a lot of space and time.
                     The script generates a directory of each state, along with individual csv files for each party.
@@ -123,7 +172,7 @@
                         <li><b>State</b> in which the constituency is situated.</li>
                         <li><b>Candidate</b> who has won.</li>
                         <li><b>Party</b> which the candidate belongs to.</li>
-                        <li><b>Total Votes</b> received by the candidate.</li>
+                        <li><b>Total Votes</b> recieved by the candidate.</li>
                         <li><b>Majority voted</b> by which he/she has won</li>
                     </ul>
                 </p>
@@ -135,7 +184,7 @@
                 </p>
                 <p class="Methodology-Content">
                     B) I also created a list containing parties who have gathered the most seats in every state.
-                    This was imperative to visualize the majority in each state, and its effect on the 
+                    This was imperative to visualize the majority in each state, and it's effect on the 
                     National Seat distribution.
                     <br><br>
                     The specific script can be found in the file "leading.py"
@@ -157,7 +206,7 @@
                 <p class="Methodology-Content">
                     The scraped and processed data was used to visualize data using different charts.
                     Tableau was a really helpful tool in making interactive dashboards, and it made 
-                    uncovering insights very easy. 
+                    uuncovering insights very easy. 
                     <br><br>
                     The visualizations are depicted in the Insights section of this report.
                 </p>
@@ -222,7 +271,7 @@
                 </div> <!--Tableau Description div closing-->
                 <h2>Insight 1 :-</h2>
                 <p class="Insights-Content">
-                    BJP has clear majority in 15 states/Union Territories.
+                    BJP has clear majority in 15 states/Union Terretories.
                     BJP has thus managed to retain 44.2% seats in the Lok Sabha Elections 2024.
                     <br><br>
                     <img src="pictures_HTML/i1.png">
@@ -247,7 +296,7 @@
 
                 <h2>Insight 3 :-</h2>
                 <p class="Insights-Content">
-                    INC has majority in 5 states, along with a tie in Haryana, Telangana and Goa with BJP.
+                    INC has majority in 5 stats, along with a tie in Haryana, Telangana and Goa with BJP.
                     <br><br>
                     <img src="BJP_INC_TIE.png">
                 </p>       
@@ -295,7 +344,7 @@
                 </p>
                 <h2>Insight 8 :-</h2>
                 <p class="Insights-Content">
-                    BJP has a huge majority in Gujarat, Odisha and Chattisgarh as well. But INC has managed to 
+                    BJP has a huge majority in Gujrat, Odissa and Chattisgarh as well. But INC has managed to 
                     secure 1 seat in these states as well. 
                 </p>
                 <h2>Insight 9 :-</h2>
@@ -404,7 +453,7 @@
                     provide a clear and insightful view of the electoral landscape, contributing valuable knowledge
                     to the field of political analysis and public awareness.
                     <br><br>
-                    I am open to feedback and further discussions on how to 
+                    I thank Kalvium for giving me this task, and I am open to feedback and further discussions on how to 
                     make my analysis better!
                 </p>
             </div><!--Conclusion closing div-->
